@@ -81,14 +81,14 @@ function checkTotalAmount(totalAmount){
     let max = 999999;
     let text = "";
     if(totalAmount === "") text = "合計金額が空です。";
-    if(parseInt(totalAmount) > max) text = "金額が999,999円以上です。";
+    if(parseInt(totalAmount) > max) text = "合計金額が999,999円以上です。";
     return text;
 }
 
 function checkInteger(totalAmount, numPeople, fixedPeople, fixedAmount){
     let result = true;
     let pattern = /[^0-9]+/;
-    let message = "整数以外の文字が含まれます"
+    let message = "整数以外の文字が含まれる箇所があります。"
 
     if(String(totalAmount).match(pattern) !== null) result = false;
     if(String(numPeople).match(pattern) !== null) result = false;

@@ -14,9 +14,9 @@ function allController(){
     if(errmessage !== "") {alert(errmessage); return;}
     errmessage = checkNumPeople(numPeople);
     if(errmessage !== "") {alert(errmessage); return;}
-    errmessage = checkMax(fixedPeople, 99, "金額を固定したい人数が99人以上です。");
+    errmessage = checkMax(fixedPeople, 99, "金額を固定したい人数が99人を超えています。");
     if(errmessage !== "") {alert(errmessage); return;}
-    errmessage = checkMax(fixedAmount, 999999, "固定する金額が999,999円以上です。");
+    errmessage = checkMax(fixedAmount, 999999, "固定する金額が999,999円を超えています。");
     if(errmessage !== "") {alert(errmessage); return;}
 
     //計算
@@ -73,7 +73,7 @@ function checkNumPeople(numPeople){
     let text = "";
     if(numPeople === "") text = "割り勘をしたい人数が空です。";
     if(parseInt(numPeople) < min) text = "割り勘をしたい人数が1人未満です。";
-    if(parseInt(numPeople) > max) text = "割り勘をしたい人数が99人以上です。";
+    if(parseInt(numPeople) > max) text = "割り勘をしたい人数が99人を超えています。";
     return text;
 }
 
@@ -81,7 +81,7 @@ function checkTotalAmount(totalAmount){
     let max = 999999;
     let text = "";
     if(totalAmount === "") text = "合計金額が空です。";
-    if(parseInt(totalAmount) > max) text = "合計金額が999,999円以上です。";
+    if(parseInt(totalAmount) > max) text = "合計金額が999,999円を超えています。";
     return text;
 }
 
